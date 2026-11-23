@@ -1,7 +1,4 @@
 name: CI 
-
-name: Tests multi-langages
-
 on:
   push:
     branches: [main]
