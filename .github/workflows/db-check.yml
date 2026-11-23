@@ -1,0 +1,15 @@
+name: 
+on:
+  push:
+   branches: [main]
+  pull_request:
+ jobs:
+  db:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Recuperer le code
+      uses: actions/checkout@v4
+    - name: Informations sur la machine
+      run: bash db/setup.sh
+    - name: Outils de base de donnees preinstalles
+      run: PGPASSWORD=postgres psql -h localhost -U postgres -d tp -c "SELECT * FROM students;"
