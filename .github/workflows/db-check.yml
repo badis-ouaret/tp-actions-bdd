@@ -12,4 +12,4 @@ on:
     - name: Informations sur la machine
       run: bash db/setup.sh
     - name: Outils de base de donnees preinstalles
-      run: PGPASSWORD=postgres psql -h localhost -U postgres -d tp -c "SELECT * FROM students;"
+      run: | PGPASSWORD=postgres psql -h localhost -U postgres -d tp -c "SELECT * FROM students;
